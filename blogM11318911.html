@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣美到犯規！| 畢卡索風格遊記</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Zhi+Mang+Xing&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cubist: {
+                            gold: '#D4AF37',
+                            deepBlue: '#1A365D',
+                            terracotta: '#C05621',
+                            sand: '#F6E05E',
+                            abstract: '#2D3748',
+                            canvas: '#F7FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                        artistic: ['Zhi Mang Xing', 'cursive'],
+                        body: ['Noto Sans TC', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Picasso / Cubist Accents */
+        .cubist-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            position: relative;
+        }
+
+        .abstract-shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+
+        .geometric-border {
+            clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 98%);
+        }
+
+        .picasso-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 4px solid #D4AF37;
+        }
+
+        .picasso-card:hover {
+            transform: scale(1.02) rotate(-1deg);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #D4AF37, #F6E05E, #C05621);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
+
+        .banner-container img {
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+            filter: saturate(1.2) contrast(1.1);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="font-body leading-relaxed">
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden pt-10 pb-20">
+        <!-- Abstract Elements -->
+        <div class="abstract-shape top-10 left-[-5%] w-64 h-64 bg-yellow-500 rounded-full mix-blend-screen filter blur-3xl animate-float"></div>
+        <div class="abstract-shape bottom-20 right-[-5%] w-96 h-96 bg-blue-600 rounded-lg rotate-12 mix-blend-overlay filter blur-3xl animate-pulse-slow"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 space-y-6">
+                    <span class="inline-block px-4 py-1 rounded-full border border-cubist-gold text-cubist-gold text-sm font-bold tracking-widest uppercase">
+                        Vertical Landscape Exploration
+                    </span>
+                    <h1 class="text-6xl md:text-8xl font-display font-black leading-tight">
+                        台灣 <br/>
+                        <span class="text-gradient font-artistic italic">美到犯規</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 max-w-lg">
+                        從高山到海洋，一場解構主義式的絕美風景全攻略。在這座島嶼，空間被壓縮，感官被放大。
+                    </p>
+                    <div class="flex items-center gap-4 pt-4">
+                        <div class="h-1 w-20 bg-cubist-gold"></div>
+                        <span class="text-sm font-mono tracking-tighter text-slate-500">M11318911 / BLOG POST</span>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 banner-container relative">
+                    <div class="absolute inset-0 border-8 border-cubist-gold translate-x-4 translate-y-4 -z-10 opacity-30"></div>
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img src='https://opal.google/board/blobs/ae9b1dba-19c3-473c-af18-2410599fcb8e' alt='Picasso Style Banner' class="hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-8 left-8 bg-black/60 backdrop-blur-md p-4 border-l-4 border-cubist-gold">
+                            <p class="text-white font-bold text-lg">解構：海與山的重疊</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            
+            <!-- Introduction Section -->
+            <section class="md:col-span-12 glass-panel p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-cubist-terracotta opacity-20 geometric-border"></div>
+                <div class="max-w-4xl mx-auto">
+                    <blockquote class="text-3xl md:text-4xl font-light italic leading-relaxed text-slate-200 border-l-8 border-cubist-gold pl-8 py-4">
+                        「如果你問我，這世界上有沒有哪個地方能讓你在同一個晝夜裡，呼吸過三千公尺海拔的冷冽空氣，又踩在南國溫暖的浪花裡？答案只有一個：<span class="font-black text-white underline decoration-cubist-gold">台灣</span>。」
+                    </blockquote>
+                    <p class="mt-8 text-lg text-slate-400 leading-loose">
+                        這座位於歐亞板塊與菲律賓海板塊交界處的島嶼，不僅是地質學家的天堂，更是旅人眼中最不可思議的「風景壓縮包」。
+                    </p>
+                </div>
+            </section>
+
+            <!-- Column 1: The Physics of Island -->
+            <div class="md:col-span-7 space-y-8">
+                <article class="glass-panel p-8 picasso-card">
+                    <h2 class="text-3xl font-display font-black text-cubist-gold mb-6 flex items-center">
+                        <span class="text-5xl mr-4 opacity-50">01</span>
+                        這座島嶼會「縮骨功」？
+                    </h2>
+                    <div class="prose prose-invert max-w-none text-slate-300 space-y-4">
+                        <p>
+                            台灣的面積不到 3.6 萬平方公里，但在這小小的身軀裡，卻展現了極致的「縮骨功」。它是全球高山密度最高的島嶼之一，全島擠進了 268 座超過 3,000 公尺的高山。
+                        </p>
+                        <p class="bg-abstract/30 p-4 border-r-4 border-blue-500 italic">
+                            這種「短促而陡峭」的地形，創造出一一種「垂直起降」的感官體驗——你可能早上還在雲端喝著高山咖啡，下午就已經在海邊玩沙。
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                            <li class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                <strong class="text-white block mb-2 font-display">太魯閣</strong>
+                                大理石被立霧溪千萬年切割出的震撼斷崖。
+                            </li>
+                            <li class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                <strong class="text-white block mb-2 font-display">阿里山</strong>
+                                會呼吸的千年紅檜神木群震懾心靈。
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Section 3: Trends -->
+                <article class="glass-panel p-8 picasso-card bg-cubist-deepBlue/20">
+                    <h2 class="text-3xl font-display font-black text-cubist-gold mb-6">
+                        <span class="text-5xl mr-4 opacity-50">03</span>
+                        「山海快速切換」與「秘境獵人」
+                    </h2>
+                    <div class="space-y-6 text-slate-300">
+                        <p>台灣的「一日生活圈」奇蹟，在全球旅遊地圖中絕無僅有。早上在百岳登頂看雲海，晚上在墾丁潛水看珊瑚，這不是傳說。</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-cubist-gold/20 text-cubist-gold rounded text-xs font-bold uppercase tracking-widest">司馬庫斯</span>
+                            <span class="px-3 py-1 bg-cubist-gold/20 text-cubist-gold rounded text-xs font-bold uppercase tracking-widest">阿朗壹古道</span>
+                            <span class="px-3 py-1 bg-cubist-gold/20 text-cubist-gold rounded text-xs font-bold uppercase tracking-widest">百岳大縱走</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Column 2: Soul Stories -->
+            <div class="md:col-span-5 space-y-8">
+                <article class="glass-panel p-8 h-full flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-cubist-gold opacity-5 rotate-45"></div>
+                    <div>
+                        <h2 class="text-3xl font-display font-black text-cubist-gold mb-8">
+                            <span class="text-5xl mr-4 opacity-50">02</span>
+                            景點背後的「靈魂故事」
+                        </h2>
+                        <div class="space-y-8">
+                            <div class="group">
+                                <h3 class="text-xl font-bold text-white group-hover:text-cubist-gold transition-colors mb-2">● 阿里山：森林火車的奇蹟</h3>
+                                <p class="text-sm text-slate-400 pl-4 border-l border-slate-700">不僅是看第一道曙光，那條蜿蜒的森林鐵道是日治時期為了運送紅檜而興建的技術傑作。</p>
+                            </div>
+                            <div class="group">
+                                <h3 class="text-xl font-bold text-white group-hover:text-cubist-gold transition-colors mb-2">● 太魯閣：用汗水鑿出的藝術</h3>
+                                <p class="text-sm text-slate-400 pl-4 border-l border-slate-700">1950 年代榮民前輩們在懸崖上憑著雙手一錘一鑿開闢，那是熱血與眼淚換來的通天之路。</p>
+                            </div>
+                            <div class="group">
+                                <h3 class="text-xl font-bold text-white group-hover:text-cubist-gold transition-colors mb-2">● 日月潭：邵族聖地</h3>
+                                <p class="text-sm text-slate-400 pl-4 border-l border-slate-700">因興建大觀發電廠而讓潭面「變胖」，成為今日晨霧繚繞的如夢似幻壯麗規模。</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Section 4 & 5: Reflection and Future -->
+            <div class="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <!-- Section 4 -->
+                <div class="bg-cubist-terracotta/10 border border-cubist-terracotta/30 p-10 rounded-3xl relative">
+                    <div class="absolute -top-4 -left-4 bg-cubist-terracotta text-white px-4 py-1 font-bold transform -rotate-3">
+                        WARNING: GROWTH PAINS
+                    </div>
+                    <h2 class="text-3xl font-display font-black text-white mb-6 pt-4">觀光太紅也是種困擾？</h2>
+                    <p class="text-slate-300 mb-6">
+                        當九份、清境這些地方患上「人氣恐慌症」，觀光客多到交通癱瘓、物價翻倍時，我們不禁反思：原本那份純樸的在地人情味去哪了？
+                    </p>
+                    <div class="p-4 bg-black/40 rounded-xl text-sm italic border-l-4 border-red-500">
+                        「我們該急著重建觀光設施，還是該聽從大地的警告，讓受傷的山林好好休息？」
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="glass-panel p-10 border-t-8 border-cubist-gold">
+                    <h2 class="text-3xl font-display font-black text-cubist-gold mb-8">旅遊 2.0：未來「高級地」玩台灣</h2>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <span class="w-8 h-8 rounded-full bg-cubist-gold flex-shrink-0 flex items-center justify-center text-black font-bold">1</span>
+                            <div>
+                                <h4 class="font-bold text-white">永續觀光當道</h4>
+                                <p class="text-sm text-slate-400">限制入山人數是為了讓子孫還能看見同樣的美。</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="w-8 h-8 rounded-full bg-cubist-gold flex-shrink-0 flex items-center justify-center text-black font-bold">2</span>
+                            <div>
+                                <h4 class="font-bold text-white">科技拯救美景</h4>
+                                <p class="text-sm text-slate-400">透過 VR/AR 虛擬導覽，用數位能量延續風景生命。</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="w-8 h-8 rounded-full bg-cubist-gold flex-shrink-0 flex items-center justify-center text-black font-bold">3</span>
+                            <div>
+                                <h4 class="font-bold text-white">跟著氣候去旅行</h4>
+                                <p class="text-sm text-slate-400">投身環境守護，讓每一場旅行都成為守護地球的具體行動。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Closing Sentiment -->
+        <div class="mt-20 text-center pb-20 relative">
+            <div class="h-20 w-px bg-gradient-to-b from-cubist-gold to-transparent mx-auto mb-8"></div>
+            <h3 class="text-4xl md:text-6xl font-artistic text-gradient mb-8 px-4">
+                台灣的美，美在懂得與這片土地共存。
+            </h3>
+            <p class="max-w-2xl mx-auto text-slate-500 font-display tracking-widest uppercase">
+                Redefine your journey. Embrace the layers.
+            </p>
+            
+            <!-- Abstract Floating Footer Visual (No Text) -->
+            <div class="mt-12 flex justify-center gap-2 opacity-30">
+                <div class="w-12 h-12 bg-cubist-gold geometric-border animate-float" style="animation-delay: 0s;"></div>
+                <div class="w-12 h-12 bg-cubist-deepBlue geometric-border animate-float" style="animation-delay: 1s;"></div>
+                <div class="w-12 h-12 bg-cubist-terracotta geometric-border animate-float" style="animation-delay: 2s;"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Side Decoration (Picasso Style) -->
+    <div class="fixed top-0 left-0 h-screen w-2 bg-cubist-gold/20 hidden lg:block"></div>
+    <div class="fixed top-20 right-8 vertical-text text-slate-800 text-6xl font-black select-none pointer-events-none opacity-20 hidden lg:block">
+        FRAGMENTED LANDSCAPE
+    </div>
+
+</body>
+</html>
